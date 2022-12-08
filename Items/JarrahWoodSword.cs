@@ -25,7 +25,8 @@ namespace ShrublandsMod.Items
 			Item.value = 10000;
 			Item.rare = 2;
 			Item.UseSound = SoundID.Item1;
-			Item.autoReuse = true;
+			Item.autoReuse = false;
+			//testing git, ^ false now
 		}
 
 		public override void AddRecipes()
