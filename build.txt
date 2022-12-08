@@ -1,0 +1,3 @@
+displayName = Shrublands Mod
+author = ArtificialEnemy
+version = 0.1
