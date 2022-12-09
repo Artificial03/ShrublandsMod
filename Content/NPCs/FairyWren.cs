@@ -39,8 +39,8 @@ namespace ShrublandsMod.Content.NPCs
 
         public override void SetDefaults()
         {
-            NPC.width = 14;
-            NPC.height = 14;
+            NPC.width = 13;
+            NPC.height = 10;
             NPC.aiStyle = 24;
             NPC.damage = 0;
             NPC.defense = 0;
@@ -48,7 +48,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.knockBackResist = 0.8f;
             NPC.DeathSound = SoundID.NPCDeath1;
-            //NPC.catchItem = 2015;
+            //NPC.catchItem = 2015; // may want this later
             NPC.npcSlots = 0.4f;
             NPC.dontTakeDamageFromHostiles = false; //may need this
             AnimationType = NPCID.Bird; // may need this. test with and without.
@@ -69,6 +69,17 @@ namespace ShrublandsMod.Content.NPCs
         //may be unnecssary
         //public override void OnCaughtBy(Player player, Item item, bool failed) {}
 
-       
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+
+            if (spawnInfo.Player.ZoneForest && Main.dayTime && spawnInfo.Player.ZoneOverworldHeight)
+            {
+                return 0.8f;
+            }
+            else
+            {
+                return 0;
+            }//if(spawnInfo.Player.GetModPlayer<ExamplePlayer>().ZoneExample) // Mod Biome
+        }
     }
 }
