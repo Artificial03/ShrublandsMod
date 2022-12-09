@@ -27,6 +27,7 @@ namespace ShrublandsMod.Content.NPCs
             // DisplayName automatically assigned from localization files, but the commented line below is the normal approach.
             // DisplayName.SetDefault("Fairy Wren");
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Bird]; // The amount of frames the NPC has
+            Main.npcCatchable[Type] = true; // this makes thing work???
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
@@ -51,6 +52,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.catchItem = ModContent.ItemType<FairyWrenItem>(); // may want this later
             NPC.npcSlots = 0.4f;
+            NPC.friendly = true; // temporary solution, not full bird functionality
             NPC.dontTakeDamageFromHostiles = false; //may need this
             AnimationType = NPCID.Bird; // may need this. test with and without.
             //SpawnModBiomes = new int[] { ModContent.GetInstance<Shrublands>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary

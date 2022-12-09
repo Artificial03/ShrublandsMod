@@ -20,6 +20,7 @@ namespace ShrublandsMod.Content.Items
             DisplayName.SetDefault("Fairy Wren"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("It's a fairy wren!!! :)");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+
         }
 
         public override void SetDefaults()
@@ -29,7 +30,7 @@ namespace ShrublandsMod.Content.Items
             Item.maxStack = 999;
             Item.value = Item.buyPrice(silver: 1);
             Item.consumable = true;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.autoReuse = true;
             Item.useTurn = true;
             Item.useAnimation = 15;
@@ -38,6 +39,5 @@ namespace ShrublandsMod.Content.Items
             Item.makeNPC = ModContent.NPCType<FairyWren>();
 
         }
-
     }
 }
