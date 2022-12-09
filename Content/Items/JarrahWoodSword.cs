@@ -10,6 +10,7 @@ namespace ShrublandsMod.Content.Items
         {
             // DisplayName.SetDefault("JarrahWoodSword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("This is a basic modded sword.");
+            
         }
 
         public override void SetDefaults()

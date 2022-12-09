@@ -16,6 +16,7 @@ using Terraria.DataStructures;
 using System.Collections.Generic;
 using ReLogic.Content;
 using Terraria.ModLoader.IO;
+using ShrublandsMod.Content.Items;
 
 namespace ShrublandsMod.Content.NPCs
 {
@@ -48,7 +49,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.knockBackResist = 0.8f;
             NPC.DeathSound = SoundID.NPCDeath1;
-            //NPC.catchItem = 2015; // may want this later
+            NPC.catchItem = ModContent.ItemType<FairyWrenItem>(); // may want this later
             NPC.npcSlots = 0.4f;
             NPC.dontTakeDamageFromHostiles = false; //may need this
             AnimationType = NPCID.Bird; // may need this. test with and without.
