@@ -29,7 +29,15 @@ namespace ShrublandsMod.Content.Items
             Item.maxStack = 999;
             Item.value = Item.buyPrice(silver: 1);
             Item.consumable = true;
+            Item.useStyle = 1;
+            Item.autoReuse = true;
+            Item.useTurn = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.noUseGraphic = true;
             Item.makeNPC = ModContent.NPCType<FairyWren>();
+
         }
+
     }
 }
