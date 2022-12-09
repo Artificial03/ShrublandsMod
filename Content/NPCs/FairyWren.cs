@@ -50,7 +50,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.knockBackResist = 0.8f;
             NPC.DeathSound = SoundID.NPCDeath1;
-            NPC.catchItem = ModContent.ItemType<FairyWrenItem>(); // may want this later
+            NPC.catchItem = ModContent.ItemType<FairyWrenItem>();
             NPC.npcSlots = 0.4f;
             NPC.friendly = true; // temporary solution, not full bird functionality
             NPC.dontTakeDamageFromHostiles = false; //may need this
