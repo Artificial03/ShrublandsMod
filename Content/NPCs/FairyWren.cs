@@ -27,7 +27,7 @@ namespace ShrublandsMod.Content.NPCs
             // DisplayName automatically assigned from localization files, but the commented line below is the normal approach.
             // DisplayName.SetDefault("Fairy Wren");
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Bird]; // The amount of frames the NPC has
-            Main.npcCatchable[Type] = true; // this makes thing work???
+            Main.npcCatchable[Type] = true; // Makes catching work
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
@@ -35,12 +35,13 @@ namespace ShrublandsMod.Content.NPCs
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
 
-
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
         }
 
         public override void SetDefaults()
         {
+            NPC.friendly = true; // Cant be damaged by player (not complete critter behaviour
+            NPC.dontCountMe = true;
             NPC.width = 13;
             NPC.height = 10;
             NPC.aiStyle = 24;
@@ -52,10 +53,20 @@ namespace ShrublandsMod.Content.NPCs
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.catchItem = ModContent.ItemType<FairyWrenItem>();
             NPC.npcSlots = 0.4f;
-            NPC.friendly = true; // temporary solution, not full bird functionality
-            NPC.dontTakeDamageFromHostiles = false; //may need this
+            NPC.dontTakeDamageFromHostiles = false;
             AnimationType = NPCID.Bird; // may need this. test with and without.
             //SpawnModBiomes = new int[] { ModContent.GetInstance<Shrublands>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
+        }
+
+
+        public override bool? CanBeHitByItem(Player player, Item item)
+        {
+            return true;
+        }
+
+        public override bool? CanBeHitByProjectile(Projectile projectile)
+        {
+            return true;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
