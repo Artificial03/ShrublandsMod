@@ -61,13 +61,45 @@ namespace ShrublandsMod.Content.NPCs
 
         public override bool? CanBeHitByItem(Player player, Item item)
         {
+            if (player.HasItem(ItemID.DontHurtCrittersBook))
+                return false;
             return true;
         }
 
         public override bool? CanBeHitByProjectile(Projectile projectile)
         {
+            if(projectile.owner != 255)
+            {
+                if (Main.player[projectile.owner].HasItem(ItemID.DontHurtCrittersBook))
+                    return false;
+            }
             return true;
         }
+
+        //public override void HitEffect(int hitDirection, double damage)
+        //{
+        //    // If the NPC dies, spawn gore and play a sound
+        //    if (Main.netMode == NetmodeID.Server)
+        //    {
+        //        // We don't want Mod.Find<ModGore> to run on servers as it will crash because gores are not loaded on servers
+        //        return;
+        //    }
+
+        //    if (NPC.life <= 0)
+        //    {
+        //        // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
+        //        int backGoreType = Mod.Find<ModGore>("").Type;
+        //        int frontGoreType = Mod.Find<ModGore>("").Type;
+
+        //        var entitySource = NPC.GetSource_Death();
+
+        //        for (int i = 0; i < 2; i++)
+        //        {
+        //            Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7)), backGoreType);
+        //            Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7)), frontGoreType);
+        //        }
+        //    }
+        //}
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
