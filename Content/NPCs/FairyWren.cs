@@ -125,7 +125,8 @@ namespace ShrublandsMod.Content.NPCs
             else
             {
                 return 0;
-            }//if(spawnInfo.Player.GetModPlayer<ExamplePlayer>().ZoneExample) // Mod Biome
+            }
+            //if(spawnInfo.Player.GetModPlayer<ExamplePlayer>().ZoneExample) // Mod Biome
         }
     }
 }
