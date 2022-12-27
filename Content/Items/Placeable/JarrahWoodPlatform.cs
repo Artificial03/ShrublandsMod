@@ -1,11 +1,12 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
-using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace ShrublandsMod.Content.Items.Placeable
 {
-    public class JarrahWood : ModItem
+    public  class JarrahWoodPlatform : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -23,23 +24,12 @@ namespace ShrublandsMod.Content.Items.Placeable
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.createTile = ModContent.TileType<Tiles.JarrahWood>();
+            Item.createTile = ModContent.TileType<Tiles.JarrahWoodPlatform>();
         }
-
         public override void AddRecipes()
         {
-            //CreateRecipe(10)
-            //    .AddIngredient<ExampleItem>()
-            //    .AddTile<Tiles.Furniture.ExampleWorkbench>()
-            //    .Register();
-
-            //CreateRecipe() // Add multiple recipes set to one Item.
-            //    .AddIngredient<ExampleWall>(4)
-            //    .AddTile<Tiles.Furniture.ExampleWorkbench>()
-            //    .Register();
-
-            CreateRecipe()
-                .AddIngredient<JarrahWoodPlatform>(2)
+            CreateRecipe(2)
+                .AddIngredient<JarrahWood>(1)
                 .Register();
         }
     }
