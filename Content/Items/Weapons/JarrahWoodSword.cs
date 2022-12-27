@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using ShrublandsMod.Content.Items.Placeable;
 
-namespace ShrublandsMod.Content.Items
+namespace ShrublandsMod.Content.Items.Weapons
 {
     public class JarrahWoodSword : ModItem
     {
