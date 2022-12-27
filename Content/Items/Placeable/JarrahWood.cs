@@ -28,15 +28,10 @@ namespace ShrublandsMod.Content.Items.Placeable
 
         public override void AddRecipes()
         {
-            //CreateRecipe(10)
-            //    .AddIngredient<ExampleItem>()
-            //    .AddTile<Tiles.Furniture.ExampleWorkbench>()
-            //    .Register();
-
-            //CreateRecipe() // Add multiple recipes set to one Item.
-            //    .AddIngredient<ExampleWall>(4)
-            //    .AddTile<Tiles.Furniture.ExampleWorkbench>()
-            //    .Register();
+            CreateRecipe() // Add multiple recipes set to one Item.
+                .AddIngredient<JarrahWoodWall>(4)
+                .AddTile(TileID.WorkBenches)
+                .Register();
 
             CreateRecipe()
                 .AddIngredient<JarrahWoodPlatform>(2)
