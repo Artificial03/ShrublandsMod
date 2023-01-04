@@ -25,7 +25,7 @@ namespace ShrublandsMod.Content.Items.Weapons
             Item.useStyle = 1;
             Item.knockBack = 6;
             Item.value = 300;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = false;
             //testing git, ^ false now

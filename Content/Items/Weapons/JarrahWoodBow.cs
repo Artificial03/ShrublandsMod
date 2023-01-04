@@ -34,6 +34,7 @@ namespace ShrublandsMod.Content.Items.Weapons
             Item.value = 100;
             Item.DamageType = DamageClass.Ranged;
             Item.autoReuse = false;
+            Item.rare = ItemRarityID.Green;
         }
 
         public override void AddRecipes()
