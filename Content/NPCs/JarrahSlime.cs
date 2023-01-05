@@ -24,14 +24,11 @@ namespace ShrublandsMod.Content.NPCs
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName automatically assigned from localization files, but the commented line below is the normal approach.
-            // DisplayName.SetDefault("Fairy Wren");
-            Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime]; // The amount of frames the NPC has
+            Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime]; 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
-                // Influences how the NPC looks in the Bestiary
-                Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+                Velocity = 1f 
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -51,8 +48,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.npcSlots = 1f;
             NPC.value = 100f;
-            AnimationType = NPCID.BlueSlime; // may need this. test with and without.
-            //SpawnModBiomes = new int[] { ModContent.GetInstance<Shrublands>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
+            AnimationType = NPCID.BlueSlime; 
             Banner = NPC.type;
             BannerItem = ModContent.ItemType<Items.Banners.JarrahSlimeBanner>();
         }

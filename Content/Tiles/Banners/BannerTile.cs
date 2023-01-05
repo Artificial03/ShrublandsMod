@@ -59,8 +59,8 @@ namespace ShrublandsMod.Content.Tiles.Banners
                 switch (style)
                 {
                     case 0:
-                        Main.SceneMetrics.hasBanner = true;
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<JarrahSlime>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
                         break;
                     default:
                         return;
