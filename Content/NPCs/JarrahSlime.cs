@@ -39,7 +39,7 @@ namespace ShrublandsMod.Content.NPCs
 
         public override void SetDefaults() 
         {
-            NPC.width = 20;
+            NPC.width = 22;
             NPC.height = 18;
             NPC.aiStyle = NPCAIStyleID.Slime;
             AIType = NPCID.BlueSlime;
