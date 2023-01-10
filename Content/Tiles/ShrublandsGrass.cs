@@ -18,11 +18,14 @@ namespace ShrublandsMod.Content.Tiles
         {
             Main.tileSolid[Type] = true;
             Main.tileMerge[Type][ModContent.TileType<ShrublandsGrass>()] = true;
+            Main.tileMerge[Type][TileID.Grass] = true;
+            Main.tileMerge[Type][TileID.Dirt] = true;
             Main.tileBlendAll[Type] = true;
             Main.tileMergeDirt[Type] = true;
             Main.tileBlockLight[Type] = true;
 
             TileID.Sets.Grass[Type] = true;
+            TileID.Sets.ForcedDirtMerging[Type] = true;
             TileID.Sets.NeedsGrassFraming[Type] = true;
             TileID.Sets.NeedsGrassFramingDirt[Type] = TileID.Dirt;
             TileID.Sets.Conversion.Grass[Type] = true;
@@ -120,11 +123,9 @@ namespace ShrublandsMod.Content.Tiles
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
-            if (!fail) //Change self into dirt
-            {
-                fail = true;
-                Framing.GetTileSafely(i, j).TileType = TileID.Dirt;
-            }
+            //if (!fail) //Change self into dirt{}
+            fail = true;
+            Framing.GetTileSafely(i, j).TileType = TileID.Dirt;
         }
     }
 }
