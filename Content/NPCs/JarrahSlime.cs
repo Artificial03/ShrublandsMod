@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using ReLogic.Content;
 using Terraria.ModLoader.IO;
 using ShrublandsMod.Content.Items;
+using ShrublandsMod.Content.Biomes;
 
 namespace ShrublandsMod.Content.NPCs
 {
@@ -51,6 +52,7 @@ namespace ShrublandsMod.Content.NPCs
             AnimationType = NPCID.BlueSlime; 
             Banner = NPC.type;
             BannerItem = ModContent.ItemType<Items.Banners.JarrahSlimeBanner>();
+            SpawnModBiomes = new int[] { ModContent.GetInstance<ShrublandsBiome>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -68,9 +70,9 @@ namespace ShrublandsMod.Content.NPCs
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
 
-            if (spawnInfo.Player.ZoneForest && Main.dayTime && spawnInfo.Player.ZoneOverworldHeight)
+            if (spawnInfo.Player.InModBiome(ModContent.GetInstance<ShrublandsBiome>()) && Main.dayTime && spawnInfo.Player.ZoneOverworldHeight)
             {
-                return 1.5f;
+                return 2.5f;
             }
             else
             {

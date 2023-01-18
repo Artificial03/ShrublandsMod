@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using ReLogic.Content;
 using Terraria.ModLoader.IO;
 using ShrublandsMod.Content.Items;
+using ShrublandsMod.Content.Biomes;
 
 namespace ShrublandsMod.Content.NPCs
 {
@@ -55,7 +56,7 @@ namespace ShrublandsMod.Content.NPCs
             NPC.npcSlots = 0.4f;
             NPC.dontTakeDamageFromHostiles = false;
             AnimationType = NPCID.Bird; // may need this. test with and without.
-            //SpawnModBiomes = new int[] { ModContent.GetInstance<Shrublands>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
+            SpawnModBiomes = new int[] { ModContent.GetInstance<ShrublandsBiome>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
         }
 
 
@@ -118,9 +119,9 @@ namespace ShrublandsMod.Content.NPCs
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
 
-            if (spawnInfo.Player.ZoneForest && Main.dayTime && spawnInfo.Player.ZoneOverworldHeight)
+            if (spawnInfo.Player.InModBiome(ModContent.GetInstance<ShrublandsBiome>()) && Main.dayTime)
             {
-                return 0.8f;
+                return 1.2f;
             }
             else
             {
