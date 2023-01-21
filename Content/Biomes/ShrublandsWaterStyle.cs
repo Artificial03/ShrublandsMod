@@ -10,7 +10,7 @@ namespace ShrublandsMod.Content.Biomes
 	public class ShrublandsWaterStyle : ModWaterStyle
 	{
 		public override int ChooseWaterfallStyle() {
-			return ModContent.Find<ModWaterfallStyle>("ExampleMod/ExampleWaterfallStyle").Slot;
+			return ModContent.Find<ModWaterfallStyle>("ShrublandsMod/ShrublandsWaterfallStyle").Slot;
 		}
 
 		public override int GetSplashDust() {
